@@ -1,0 +1,97 @@
+@font-face {
+    font-family: simplyrounded;
+    src: url(/fonts/Simply Rounded.ttf);
+}
+
+body, html{
+  background-color: #514b4b;
+  font-family: helvetica;
+  height: 100%;
+}
+
+.full-page{
+  height: 100%;
+}
+
+.half-page{
+  height: 70%;
+}
+
+#banner{
+  text-align: center;
+  background-color: #6cc0e5;
+  font-family: simplyrounded;
+  color: #514b4b;
+  font-size: 56px;
+  padding: 2%;
+}
+
+nav li{
+  display: inline;
+  width: 20%;
+  margin-left: 16%;
+}
+
+nav ul{
+  margin-left: 10%;
+}
+
+
+#logo-image{
+
+}
+
+#home-icons{
+}
+
+.divider{
+  height: 100px;
+}
+
+.icon-box{
+  text-align: center;
+  width: 30%;
+  padding: 20px;
+}
+
+.icon-box:hover{
+  background-color: #817d7d;
+  border-radius: 20px;
+}
+
+.icon-box img{
+  width: 100%;
+}
+
+
+#icon-label{
+  font-family: simplyrounded;
+  font-size: 3vw;
+}
+
+a, a:visited{
+  color: white;
+  text-decoration: none;
+}
+
+.learnmore{
+  margin: 0 auto;
+  
+}
+
+
+
+#about{
+  text-align: center;
+}
+
+#about h3{
+  color: #6cc0e5;
+  font-family: simplyrounded;
+  font-size: 30px;
+}
+
+#about p{
+  font-family: garamond;
+  color: white;
+}

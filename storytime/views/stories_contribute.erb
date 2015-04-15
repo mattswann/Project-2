@@ -1,0 +1,32 @@
+<% story = @stories %>
+<% @storydetails = story.chapters %>
+
+
+<p>
+
+
+  <h1><%= story.title %></h1> <br>
+Author: <%= story.author %> <br>
+Genre: <%= story.genre %><br>
+<% @storydetails.each do  |story|%>
+<%= story.chaptername %><br>  
+<%= story.body %><br>
+<% end %>
+
+<form action="/stories/contribute" method="post" id="contribute-story-form">
+<h3>Contribute</h3>
+  <p><label for="">Chapter Name</label>
+  <input type="text" name="chaptername"></p>
+  <p><label for="">Body</label>
+  <input type="text" name="body"></p>
+  <input type="hidden" name="story_id" value="<%= params[:id] %>">
+  <button>Update</button>
+</form>
+<form action="/stories/<%= story.id %>/delete" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <button>Delete</button>
+</form>
+
+
+</p>
+<br>

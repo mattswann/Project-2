@@ -1,0 +1,23 @@
+<h1>Recent Stories</h1>
+
+
+<div class="story-listing">
+<% @stories.each do |story| %>
+<p>Title: <%= story.title %> <br>
+Author: <%= story.author %> <br>
+Genre: <%= story.genre %><br>
+Body: <%= story.chapters.first.body if story.chapters.first %><br>
+
+<a href="/stories/view/<%= story.id %>">Continue reading</a>
+<% end %>
+</div>
+
+
+
+<br>
+<a href="/">Home</a>
+
+// <script>
+//   var bodyPreview = $('.body-preview');
+// bodyPreview.text(bodyPreview.text().substring(0,100));
+// </script>

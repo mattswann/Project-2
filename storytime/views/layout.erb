@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Story Time</title>
+  <link rel='stylesheet' href='/stylesheets/main.css'>
+  <link rel='stylesheet' href='/stylesheets/grid-layout.css'>
+  <script src="/javascripts/jquery.js"></script>
+
+</head>
+<body>
+<div id="banner" class="span-12">
+  Story Time <img src="/images/logo.png" alt="" id="logo-image">
+</div>
+<nav class="span-12">
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/createstory">Create</a></li>
+    <li><a href="/stories/new">Browse</a></li>
+    <li><a href="/stories/new">Contribute</a></li>
+    <li><a href="/about">About</a></li>
+  </ul>
+</nav>
+
+  <%= yield %>
+
+</body>

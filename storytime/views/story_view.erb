@@ -1,0 +1,10 @@
+<% story = @stories %>
+<p>Title: <%= story.title %> <br>
+Author: <%= story.author %> <br>
+Genre: <%= story.genre %><br>
+Date: <%= story.createdate %><br>
+Body: <%= story.chapters.first.body%><br>
+
+<a href="/stories/contribute/<%= story.id %>">Contribute</a>
+
+<a href="/stories/new">Back</a>
