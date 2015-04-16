@@ -1,23 +1,35 @@
-<h1>Recent Stories</h1>
+<div class="divider"></div>
+<div class="page-title">Recent Stories</div>
+<br>
+<div class="span-12">
+  <div class="story-listing-bg span-8 off-3">
+    <% @stories.each do |story| %>
+  <div class="story-listing">
+      <div class="story-listing-tite-container span-12">
+        <div class="story-listing-title span-10">
+          <%= story.title %>
+        </div>
+        <div class="story-listing-genre">
+            <%= story.genre %>
+        </div>
+      </div>
+      <br>
+    <span class="story-listing-author">
+      By <%= story.author %>
+    </span><br>
+    <div class="story-listing-body span-10">
+      <em><%= story.chapters.first.body if story.chapters.first %></em>
+    </div><br>
+    <a href="/stories/view/<%= story.id %>">Continue reading</a>
+  </div>
 
 
-<div class="story-listing">
-<% @stories.each do |story| %>
-<p>Title: <%= story.title %> <br>
-Author: <%= story.author %> <br>
-Genre: <%= story.genre %><br>
-Body: <%= story.chapters.first.body if story.chapters.first %><br>
-
-<a href="/stories/view/<%= story.id %>">Continue reading</a>
-<% end %>
+  <% end %>
 </div>
 
 
 
-<br>
-<a href="/">Home</a>
-
-// <script>
+<script>
 //   var bodyPreview = $('.body-preview');
 // bodyPreview.text(bodyPreview.text().substring(0,100));
-// </script>
+</script>
