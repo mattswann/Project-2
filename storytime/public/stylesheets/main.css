@@ -42,6 +42,7 @@ nav a:hover{
 
 }
 
+
 #navbar {
   background-color: #6cc0e5;
   height: 50px;
@@ -53,10 +54,20 @@ nav a:hover{
 
 .fixednavbar{
   position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.togglednavbar{
+  position: relative;
 }
 
 .navbar-safeguard{
   margin-top: 50px;
+}
+
+.hidden{
+  display: none;
 }
 
 .home-divider{
@@ -187,15 +198,23 @@ a, a:visited{
 
 .story-listing{
   background-color: #E0E0E0;
-  border-radius: 5px;
   margin: 2%;
   padding: 5%;
+}
 
+.story-listing:nth-child(1){
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.story-listing:nth-last-child(1){
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 
 .story-listing-bg{
   background-color: #6cc0e5;
-  border-radius: 10px;
+  border-radius: 20px;
 }
 
 .story-listing-title{
@@ -211,7 +230,6 @@ a, a:visited{
 }
 
 .story-listing-body{
-
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow:hidden;
@@ -219,6 +237,233 @@ a, a:visited{
 
 .story-listing-container{
 }
+
+#read-more, #read-more:visited{
+  color: #6cc0e5;
+  font-family: roboto-bold;
+}
+
+
+.view-title{
+  font-size: 3.5vw;
+  font-weight: bold;
+}
+
+.view-author{
+
+}
+
+.view-chaptername{
+  font-size: 24px;
+}
+
+hr{
+  width: 50%;
+}
+
+.view-buttons{
+  position: fixed;
+  bottom: 0;
+  margin-bottom: 10px;
+}
+
+.view-buttons button:hover {
+  background-color: rgba(0,0,0,0.2);
+}
+
+.view-buttons button, .view-buttons button:focus{
+  background-color: rgba(0,0,0,0.3);
+  color: white;
+  border: none;
+  width: 40%;
+  height: 40px;
+  outline: 0;
+  font-family: roboto-thin;
+}
+
+.contribute-preview{
+  display: inline-block;
+  height: 95%;
+  overflow: auto;
+}
+
+.contribute-form{
+  text-align: center;
+  display: inline-block;
+}
+
+.contribute-buttons{
+ text-align: center;
+ display: inline-block;
+ display: inline-block;
+}
+
+.contribute-buttons button{
+
+  background-color: rgba(0,0,0,0.3);
+  color: white;
+  border: none;
+  height: 40px;
+  outline: 0;
+  width: 49%;
+  font-family: roboto-thin;
+}
+
+.contribute-buttons form{
+  width: 100%;
+  display: inline-block;
+}
+
+.contribute-page-title{
+  font-size: 72px;
+  font-family: simplyrounded;
+  display: block;
+  text-align: center;
+  color: white;
+}
+
+.story-title{
+  text-align: center;
+  font-size: 40px; 
+  font-family: simplyrounded;
+  color: #6cc0e5;
+}
+
+.story-author{
+  text-align: center;
+  color: white;
+}
+
+
+
+
+/*-------------------------------*/
+
+
+
+.paper-box
+{
+
+  font-family: georgia;
+  white-space: pre-line;
+  color: #404040;
+  line-height: 1.5;
+  font-size: 12pt;
+  min-height: 100%;
+  padding: 50px;
+  margin: 0 auto;
+  background-color: #fcfcfc;
+  -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.5);
+}
+
+.paper-box:before, .box:after
+{
+  position: absolute;
+  width: 40%;
+  height: 10px;
+  left: 12px;
+  bottom: 12px;
+  background: transparent;
+  -webkit-transform: skew(-5deg) rotate(-5deg);
+  -moz-transform: skew(-5deg) rotate(-5deg);
+  -ms-transform: skew(-5deg) rotate(-5deg);
+  -o-transform: skew(-5deg) rotate(-5deg);
+  transform: skew(-5deg) rotate(-5deg);
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+} 
+
+.paper-box:after
+{
+  left: auto;
+  right: 12px;
+  -webkit-transform: skew(5deg) rotate(5deg);
+  -moz-transform: skew(5deg) rotate(5deg);
+  -ms-transform: skew(5deg) rotate(5deg);
+  -o-transform: skew(5deg) rotate(5deg);
+  transform: skew(5deg) rotate(5deg);
+}
+
+
+/*-------------------------*/
+
+
+@media only screen and (max-width: 767px){
+  .span-1, .span-3, .span-4, .span-5, .span-6, .span-7, .span-8, .span-9, .span-10, .span-11, .span-12 {
+    width: 100%;
+  }
+  
+  .span-2{
+    width: 30%;
+  }
+    .off-1, .off-2, .off-3, .off-4, .off-5, .off-6, .off-7, .off-8, .off-9, .off-10, .off-11, .off-12 {
+    margin-left: 0;
+  }
+  
+  #about {
+    width: 80%;
+    margin-left:10%;
+  }
+
+  #navbar li{
+    display: block;
+    width: 10%;
+  }
+
+  #navbar{
+    background-color: #6cc0e5;
+    width: 30%;
+    display: inline-block;
+    height: 120px;
+    box-shadow:  none;
+    text-align: right;
+    position: relative;
+  }
+
+  #toggle-nav{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 50%;
+  }
+
+  #contribute-button {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+  }
+
+  .contribute-preview .paper-box{
+    display: none;
+  }
+
+  #banner span{
+  display: inline;
+  }
+
+  #banner {
+    width: 70%;
+    display: inline-block;
+  }
+
+
+  #banner img {
+    text-align: left;
+    padding: 0;
+    display: inline;
+  }
+
+}
+
+
+
+
+
+
 
 
 

@@ -11,12 +11,12 @@
 <body>
 <div class="full-page">
 <div id="banner" class="span-12">
-  Story Time <img src="/images/logo.png" alt="" id="logo-image">
-</div>
-<nav class="span-12" id="navbar">
+  <span>Story Time</span><img src="/images/logo.png" alt="" id="logo-image">
+</div><!--
+--><nav class="span-12" id="navbar">
   <ul class="off-2">
     <li class="span-1 off-4"><a href="/">Home</a></li>
-    <li class="span-1"><a href="/about">About</a></li>
+    <li class="span-1"><a href="/#about">About</a></li>
     <li class="span-1"><a href="/createstory">Create</a></li>
     <li class="span-1"><a href="/stories/new">Browse</a></li>
     <li class="span-1"><a href="/stories/new">Contribute</a></li>
@@ -28,16 +28,18 @@
 </body>
 
 <script>
-
-  $(window).on('scroll load', function () {
+  $(window).on('scroll load', function fixednav() {
     if ($(window).scrollTop() > 120) {
+      console.log('hello')
          $('#navbar').addClass('fixednavbar');
          $('#home-icons').addClass('navbar-safeguard');
          $('.page-title').addClass('navbar-safeguard');
+         $('.box-guard').addClass('navbar-safeguard');
     } else {
          $('#navbar').removeClass('fixednavbar');
          $('#home-icons').removeClass('navbar-safeguard');
          $('.page-title').removeClass('navbar-safeguard');
+         $('.box-guard').removeClass('navbar-safeguard');
     }
 });
-  </script>
+</script>

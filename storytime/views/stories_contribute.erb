@@ -1,32 +1,50 @@
 <% story = @stories %>
 <% @storydetails = story.chapters %>
 
+<div class="divider"></div>
+<div class="box-guard"></div>
+<div class="contribute-page-title span-12">Contribute</div>
 
 <p>
+  <div class="story-title span-12"><%= story.title %></div> <br>
+     <div class="story-author soan-12">By <%= story.author %></div> <br>
+<div class="contribute-preview span-5 off-2">
+  <% @storydetails.each do  |detail|%>
+    <div class="paper-box">
+      <%= detail.chaptername %><br>  
+      <%= detail.body %><br>
+    </div>
+  <% end %>
+</div>
 
 
-  <h1><%= story.title %></h1> <br>
-Author: <%= story.author %> <br>
-Genre: <%= story.genre %><br>
-<% @storydetails.each do  |story|%>
-<%= story.chaptername %><br>  
-<%= story.body %><br>
-<% end %>
+<!-- ______________________ -->
 
-<form action="/stories/contribute" method="post" id="contribute-story-form">
-<h3>Contribute</h3>
-  <p><label for="">Chapter Name</label>
-  <input type="text" name="chaptername"></p>
-  <p><label for="">Body</label>
-  <input type="text" name="body"></p>
-  <input type="hidden" name="story_id" value="<%= params[:id] %>">
-  <button>Update</button>
-</form>
-<form action="/stories/<%= story.id %>/delete" method="post">
-  <input type="hidden" name="_method" value="delete">
-  <button>Delete</button>
-</form>
-
-
-</p>
+<div class="span-5 contribute-form">
+  <form action="/stories/contribute" method="post" id="new-story-form">
+    <p>
+      <input type="text" name="chaptername" id="submit-chaptername" placeholder="Chapter Name">
+      <textarea type="text" name="body" placeholder="Lets make some magic..." id="submit-body" rows="30" class="off-2 span-10 full-page"></textarea>
+    </p>
+</div>
 <br>
+<div class="container1 span-4 off-8">
+    <div class="contribute-buttons span-12">
+      <input type="hidden" name="story_id" value="<%= params[:id] %>">
+      <button>Update</button>
+    </form>
+    <button id="toggle-nav">Toggle nav</button>
+    <form action="/stories/<%= story.id %>/delete" method="post">
+      <input type="hidden" name="_method" value="delete">
+      <button>
+        Delete
+      </button>
+    </form>
+  </div>
+</div>
+<script>
+  $('#toggle-nav').click(function(){
+    $('#navbar').toggleClass('togglednavbar');
+    $('.box-guard').toggleClass('hidden');
+  });
+</script>

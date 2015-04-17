@@ -1,14 +1,16 @@
      
 require 'sinatra'
 require 'active_record'
-require 'pry'
-require 'sinatra/contrib/all'
+# require 'pry'
+# require 'sinatra/contrib/all'
 
-#database config
-ActiveRecord::Base.establish_connection(
+local_db = {
     :adapter => 'postgresql',
     :database => 'storytime'
-)
+}
+
+#database config
+ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'] || local_db)
 
 
 class Story < ActiveRecord::Base
@@ -107,7 +109,6 @@ post '/stories/contribute' do
   chapter.story_id = params[:story_id]
   chapter.save
 
-  binding.pry
   redirect to '/stories/new'
 end
 
