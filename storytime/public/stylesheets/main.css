@@ -106,7 +106,6 @@ a, a:visited{
 
 .learnmore{
   margin: 0 auto;
-  
 }
 
 #about{
@@ -195,7 +194,6 @@ a, a:visited{
   line-height: 1.50;
 }
 
-
 .story-listing{
   background-color: #E0E0E0;
   margin: 2%;
@@ -247,10 +245,6 @@ a, a:visited{
 .view-title{
   font-size: 3.5vw;
   font-weight: bold;
-}
-
-.view-author{
-
 }
 
 .view-chaptername{
@@ -334,12 +328,7 @@ hr{
   color: white;
 }
 
-
-
-
 /*-------------------------------*/
-
-
 
 .paper-box
 {
@@ -387,9 +376,7 @@ hr{
   transform: skew(5deg) rotate(5deg);
 }
 
-
 /*-------------------------*/
-
 
 @media only screen and (max-width: 767px){
   .span-1, .span-3, .span-4, .span-5, .span-6, .span-7, .span-8, .span-9, .span-10, .span-11, .span-12 {
@@ -458,14 +445,3 @@ hr{
   }
 
 }
-
-
-
-
-
-
-
-
-
-
-
