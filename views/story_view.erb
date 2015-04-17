@@ -1,0 +1,51 @@
+<% story = @stories %>
+<% @storydetails = story.chapters %>
+<div class="divider"></div>
+<div class="box-guard"></div>
+
+<div class="span-2 off-11 view-buttons">
+  <button id="toggle-nav">Toggle nav</button>
+  <a href="/stories/contribute/<%= story.id %>"><button id="contribute-button" class='hidden'>Contribute</button></a>
+</div>
+
+<div class="paper-box span-6 off-4"> 
+    <div class="view-title">
+      <%= story.title %>
+    </div><!--
+    --><div class="view-author">
+      By <%= story.author %> 
+    </div>
+  <% @storydetails.each do  |story|%>
+  <div class="view-chaptername">
+    <%= story.chaptername %>
+  </div>  
+    <%= story.body %>
+    <hr>
+  <% end %>
+
+    <a href="/stories/new">Back</a>
+
+  </div>
+</div>
+
+
+
+<script>
+
+
+  $('#toggle-nav').click(function(){
+    $('#navbar').toggleClass('togglednavbar');
+    $('.box-guard').toggleClass('hidden');
+  });
+
+  var num = 100;
+    var scrollBottom = $(window).scrollTop() + $(window).height() * 0.5;
+
+
+  $(window).on('scroll load', function fixednav() {
+    if ($(window).scrollTop() > scrollBottom) {
+         $('#contribute-button').removeClass('hidden');;
+    }
+});
+
+</script>
