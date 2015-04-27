@@ -40,7 +40,7 @@ get '/createstory' do
   erb :createstory
 end
 
-
+#1
 post '/stories' do 
   story = Story.new
   story.title = params[:title]
